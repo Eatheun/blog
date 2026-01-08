@@ -1,0 +1,21 @@
+---
+layout: main
+---
+{% if subtitle != "" %}
+<p class="text-4xl md:text-5xl font-black pt-5 md:pt-10 leading-tight">
+ {{ title }}
+</p>
+<p class="text-4xl md:text-5xl font-black pb-5 md:pb-10 leading-tight">
+ {{ subtitle }}
+</p>
+
+{% else %}
+<p class="text-4xl md:text-5xl font-black py-5 md:py-10 leading-tight">
+ {{ title }}
+</p>
+
+{% endif %}
+
+{% include "nav.njk" %}
+
+{{ content | safe}}

@@ -1,0 +1,32 @@
+<nav>
+  <ul class="flex py-2 border-b-4 mb-8">
+    <li class="mr-12"><a href="/">Home</a></li>
+    <li class="mr-12"><a href="/tags">Tags</a></li>
+    <li class="mr-12"><a href="/about">About</a></li>
+    <li class="items-end"><span class="cursor-pointer" id="toggleDarkMode">Dark mode</spam></li>
+  </ul>
+
+  <script defer>
+    const toggleDarkModeBtn = document.getElementById("toggleDarkMode")
+    toggleDarkModeBtn.addEventListener("click", function() {
+      if (isDarkMode()) {
+        localStorage.theme = 'light'
+        document.documentElement.classList.remove('dark')
+        toggleDarkModeBtn.innerText = 'Light mode'
+      } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+        toggleDarkModeBtn.innerText = 'Dark mode'
+      }
+    });
+
+    const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDarkMode()) {
+      document.documentElement.classList.add('dark')
+      toggleDarkModeBtn.innerText = 'Dark mode'
+    } else {
+      document.documentElement.classList.remove('dark')
+      toggleDarkModeBtn.innerText = 'Light mode'
+    }
+  </script>
+</nav>

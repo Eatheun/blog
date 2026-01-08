@@ -1,0 +1,43 @@
+---
+layout: default
+title: A Slice of Wompo's Life
+subtitle: ""
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+{% for post in pagination.items %}
+{% if post.data.published %}
+<div class="py-4">
+  <p>
+    <span class="text-2xl sm:text-3xl font-bold hover:text-blue-700 leading-tight"><a href="{{ post.url }}">{{ post.data.title }}</a></span>
+    <span class="text-sm sm:text-2xl font-normal px-4">{{ post.content | safe | readTime }} min read</span>
+  </p>
+  <em>{{ post.date | postDate }}</em>
+  <p class="mt-4">{{ post.data.post_excerpt | md | safe }}</p>
+  <p class="">{% if post.data.thumbnail %}{{ post.data.thumbnail | safe }}{% endif %}</p>
+
+  <div class="flex justify-between items-center mt-4">
+    <div class="flex-1 pr-4">
+      {% for tag in post.data.tags %}
+        {% if tag != "posts" %}
+          <a href="/tags/{{ tag }}" class="">
+            <div class="post-tag">{{ tag }}</div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <a class="flex-none hover:underline font-semibold text-blue-400" href="{{ post.url }}">Read more &rarr;</a>
+  </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+
+{% include "paginator.njk" %}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name='viewport' content='width=device-width'>
+
+    <title>{{ site.title }}</title>
+    <meta name='description' content={{ site.description }}>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preload" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"></noscript>
+    <link href="/assets/styles/tailwind.css" rel="stylesheet" />
+    <link href="/assets/styles/index.css" rel="stylesheet" />
+    <link href="/assets/styles/prism-diff.css" rel="stylesheet" />
+
+    <!-- lightbox -->
+    <link href="/assets/styles/lightbox.css" rel="stylesheet" />
+    <script src="/assets/js/lightbox-plus-jquery.js" rel="stylesheet"></script>
+    <script>
+      // lightbox config
+      lightbox.option({
+        'albumLabel': "%1 / %2",
+        'fadeDuration': 200,
+        'imageFadeDuration': 200,
+        'resizeDuration': 200,
+        'disableScrolling': true,
+        'alwaysShowNavOnTouchDevices': true
+      })
+    </script>
+  </head>
+
+  <body class="dark:text-white dark:bg-black">
+    {{ content | safe }}
+  </body>
+</html>
