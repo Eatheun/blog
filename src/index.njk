@@ -17,8 +17,10 @@ pagination:
     <span class="text-sm sm:text-2xl font-normal px-4">{{ post.content | safe | readTime }} min read</span>
   </p>
   <em>{{ post.date | postDate }}</em>
-  <p class="mt-4">{{ post.data.post_excerpt | md | safe }}</p>
-  <p class="">{% if post.data.thumbnail %}{{ post.data.thumbnail | safe }}{% endif %}</p>
+  <a href="{{ post.url }}">
+    <p class="mt-4">{{ post.data.post_excerpt | md | safe }}</p>
+    <p>{% if post.data.thumbnail %}{{ post.data.thumbnail | safe }}{% endif %}</p>
+  </a>
 
   <div class="flex justify-between items-center mt-4">
     <div class="flex-1 pr-4">

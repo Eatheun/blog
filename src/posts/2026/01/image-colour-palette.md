@@ -10,7 +10,7 @@ thumbnail: <img class='my-4 w-3/4 h-3/4 mr-4' src='/assets/img/posts/colours/ss1
 <!-- excerpt -->
 ## Brief
 
-I desperately needed a colour palette but I'm terrible with colours. So I created a tool to find the 'best-fitting' colours from an image (desktop wallpaper).
+I desperately needed a colour palette for my desktop but I'm terrible with colours. So I created a tool to find the 'best-fitting' colours from an image (desktop wallpaper).
 
 I decided to create the tool in both Python and Rust and loosely compare the colour accuracy and speed from both implementations.
 
