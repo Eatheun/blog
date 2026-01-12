@@ -104,7 +104,7 @@ return means
 So apart from the fact that the output is just lines of hexadecimal numbers, there's another script `create_colour_palette.py` to create a more extensive colour palette. It's implemented with commandline arguments so you'll have to run it as follows...
 
 <a href='/assets/img/posts/colours/better_term_out.png' data-lightbox='better_colour_palette' data-title='still hard to read...'>
-    <img src='/assets/img/posts/colours/better_term_out.png' alt='Colour palette created from sample image' />
+    <img src='/assets/img/posts/colours/better_term_out.png' alt='Colour palette created from sample image, no colours' />
 </a>
 
 ...AND you can change some of the source code to actually see the colours!
@@ -132,7 +132,7 @@ So apart from the fact that the output is just lines of hexadecimal numbers, the
 ```
 
 <a href='/assets/img/posts/colours/coloured_term_out.png' data-lightbox='cool_colours' data-title='WHOA COLOURS!!!'>
-    <img src='/assets/img/posts/colours/coloured_term_out.png' alt='Colour palette created from sample image' />
+    <img src='/assets/img/posts/colours/coloured_term_out.png' alt='Colour palette created from sample image, colourised' />
 </a>
 
 But I wouldn't recommend scripting with the colours on since they print ANSI escape codes. It's just a fun feature I implemented 🤩

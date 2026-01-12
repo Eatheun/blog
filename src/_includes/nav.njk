@@ -1,9 +1,15 @@
 <nav>
-  <ul class="flex py-2 border-b-4 mb-8">
+  <link rel="stylesheet" href="/assets/styles/ld-btn.css">
+  <ul class="flex pb-4 border-b-4 mb-8">
     <li class="mr-12"><a href="/">Home</a></li>
     <li class="mr-12"><a href="/tags">Tags</a></li>
     <li class="mr-12"><a href="/about">About</a></li>
-    <li class="items-end"><span class="cursor-pointer" id="toggleDarkMode">Dark mode</spam></li>
+    <label class="my-auto ml-auto switch">
+      <li>
+        <input type="checkbox" id="toggleDarkModeInput">
+        <span class="slider" id="toggleDarkMode"></span>
+      </li>
+    </label>
   </ul>
 
   <script defer>
@@ -12,21 +18,19 @@
       if (isDarkMode()) {
         localStorage.theme = 'light'
         document.documentElement.classList.remove('dark')
-        toggleDarkModeBtn.innerText = 'Light mode'
+        document.getElementById("toggleDarkModeInput").checked = true
       } else {
         localStorage.theme = 'dark'
         document.documentElement.classList.add('dark')
-        toggleDarkModeBtn.innerText = 'Dark mode'
       }
     });
 
     const isDarkMode = () => localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (isDarkMode()) {
       document.documentElement.classList.add('dark')
-      toggleDarkModeBtn.innerText = 'Dark mode'
+        document.getElementById("toggleDarkModeInput").checked = true
     } else {
       document.documentElement.classList.remove('dark')
-      toggleDarkModeBtn.innerText = 'Light mode'
     }
   </script>
 </nav>
