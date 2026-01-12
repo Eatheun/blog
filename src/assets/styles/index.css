@@ -2,6 +2,10 @@
   text-decoration: none!important;
 }
 
+body {
+    transition: 200ms ease-in-out; /* smoother light/dark mode */
+}
+
 h1 > a.header-anchor {
   font-weight: 800;
 }
