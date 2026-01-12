@@ -1,9 +1,9 @@
 /* The switch - the box around the slider */
 .switch {
-    --round-size: 20px;
-    --slider-size: 16px;
+    --round-size: 32px;
+    --slider-size: 20px;
     --slider-offset: calc((var(--round-size) - var(--slider-size)) / 2);
-    --length: calc(4 * var(--round-size) + var(--slider-size));
+    --length: calc(var(--round-size) + 2*var(--slider-size));
     --travel: calc(var(--length) - var(--round-size));
     --transition-speed: 300ms;
 
